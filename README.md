@@ -20,6 +20,14 @@ The latest version of this library has been tested and passed with builds 44256 
 Note that heroprotocol does not expose game balance information or provide any kind of high level analysis of replays; it's meant
 to be just the first tool in the chain for your data mining application.
 
+## What the other Fork?
+
+This is a fallback package created due to slow replay updates from the upstream Blizzard/heroprotocol repository.
+This package is functionally identical to the original heroprotocol package but instead points to a repository
+managed by ebshimizu that contains fallback protocol files (which are duplicates of the most recent protocol version,
+since we assume that Blizzard is no longer actively developing the protocol). When/if Blizzard resumes regular updates
+of their parser library, this repository will no longer be needed.
+
 ## What The Fork?
 
 I first want to thank Mathieu Merdy ([Farof](https://github.com/Farof)) for doing most of the work
@@ -30,7 +38,7 @@ The reason for this fork is to keep up with my speed of development and implemen
 believe should be the extraction library.
 
 Mathieu did a wonderful job with the initial import and product direction, but unfortunately has
-not been as active on the product as I have hoped.  It is with regret that I have to fork to
+not been as active on the product as I have hoped. It is with regret that I have to fork to
 continue development, but I hope that Mathieu understands and continues development.
 
 Justin
@@ -67,7 +75,7 @@ Output:
 
     $ node bin/heroprotocol.js map.StormReplay -H --json
 
-  Outputs the `map.StormReplay` replay header in JSON format.
+Outputs the `map.StormReplay` replay header in JSON format.
 
     usage: heroprotocol.js replayFile [--help] [--gameevents] [--messageevents]
     [--trackerevents] [--attributeevents] [--header] [--details] [--initdata]
