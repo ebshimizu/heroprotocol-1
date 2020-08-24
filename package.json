@@ -1,6 +1,6 @@
 {
   "name": "heroprotocol-fallback",
-  "version": "1.0.0",
+  "version": "2.0.2",
   "description": "Fallback Javascript port of the heroprotocol Python library to decode Heroes of the Storm replay protocols.",
   "main": "index.js",
   "dependencies": {
@@ -8,13 +8,21 @@
     "empeeku": "^1.0.2",
     "fs-extra": "^0.26.7",
     "long": "^3.0.3",
+    "pino": "^4.17.5",
     "yargs": "^3.32.0"
+  },
+  "optionalDependencies": {
+    "storm-replay": ">=0.3.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ebshimizu/heroprotocol-1.git"
   },
   "scripts": {
+    "jslint": "node_modules/jshint/bin/jshint *.js lib/d*.js lib/Replay.js",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags",
+    "test": "node_modules/mocha/bin/mocha",
     "postinstall": "node postinstall.js"
   },
   "keywords": [
@@ -43,13 +51,15 @@
   },
   "homepage": "https://github.com/ebshimizu/heroprotocol-1",
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">8"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "grunt": "latest",
     "grunt-concurrent": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-watch": "latest",
-    "grunt-simple-mocha": "latest"
+    "grunt-simple-mocha": "latest",
+    "mocha": "^5.2.0"
   }
 }

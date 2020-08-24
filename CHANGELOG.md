@@ -1,6 +1,29 @@
 # Changelog
 
-# latest
+# latest // 2.0.2 - 2020-06-11
+
+- FIX: Better `storm-replay` logic.
+- FIX: Better testing logic to not fail without `storm-replay`
+- FIX: Updated dependencies for vulnerabilities
+
+# 2.0.1 - 2020-06-10
+
+- FIX: Blizzard changed their `heroprotocol` directory structure.
+
+# 2.0.0 - 2018-10-18
+
+- ADD: Sample replays
+- ADD: Logging
+- ADD: Tests
+- ADD: npm versioning
+
+# 2.0.0-alpha
+
+- Add in support for `storm-replay` for intelligent OSes (MacOS and Linux)
+- Docker
+- Files unprocessed (battlelobby, etc) will be passed through as buffers.
+
+# 1.0.1
 
 - Added ability to whitelist game, message, and tracker events based on key-value matches
 - Improved archive caching and added a boolean argument to `.open` that controls whether a cached version should be loaded (if possible).
